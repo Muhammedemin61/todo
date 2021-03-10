@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <title>TODU</title>
+  <style>
+    body {
+      display: flex;
+      background-color: mintcream;
+      margin: 0;
+    }
+
+    .left {
+      height: 860px;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-right-color: lightgray;
+      width: 250px;
+      background-color: white;
+    }
+
+    .tittle {
+      justify-content: center;
+      display: flex;
+    }
+
+    .tittle-content {
+      margin-left: 50px;
+      margin-top: 20px;
+      width: 250px;
+      font-size: 30px;
+      color: orange;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+
+    .options {
+      margin-top: 30px;
+    }
+
+    .options1 {
+      margin-top: 80px;
+    }
+
+    li {
+      cursor: pointer;
+      align-items: center;
+      justify-content: left;
+      display: flex;
+      height: 50px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      list-style: none;
+      width: 250px;
+      color: gray;
+      background-color: white;
+    }
+
+    .buton-content {
+      cursor: pointer;
+      height: 50px;
+      width: 50px;
+      border-radius: 50px;
+      background-color: tomato;
+      color: white;
+      font-size: 40px;
+    }
+
+    .text {
+      background-color: rgb(236, 235, 235);
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-bottom-color: lightgray;
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      padding: 20px;
+      height: 20px;
+      font-size: 20px;
+      width: 1392px;
+    }
+
+    .text:focus {
+      outline: none;
+    }
+
+    .desıgn-part {
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+      border-right-style: solid;
+      border-right-width: 1px;
+      border-right-color: lightgray;
+      border-bottom-style: solid;
+      border-bottom-width: 4px;
+      border-bottom-color: rgb(0, 0, 255);
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      color: gray;
+      background-color: white;
+      height: 17px;
+      width: 450px;
+    }
+
+    .option {
+      margin-left: 40px;
+      margin-right: 10px;
+    }
+
+    .fplus {
+      cursor: pointer;
+      font-size: 20px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      border-radius: 50px;
+      height: 50px;
+      width: 50px;
+      background-color: tomato;
+      color: white;
+      margin-top: 80px;
+      margin-left: 40px;
+    }
+
+    .fa-square {
+      color: blue;
+    }
+
+
+    label.checkbox input {
+      display: none;
+    }
+
+    label.checkbox .checkbox {
+      cursor: pointer;
+      margin-right: 20px;
+      margin-left: 30px;
+      position: relative;
+      display: inline-block;
+      border: 1px solid lightblue;
+      background-color: white;
+      border-radius: 50px;
+      height: 50px;
+      width: 50px;
+    }
+
+    label.checkbox .checkbox:before {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      content: '';
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+      position: absolute;
+    }
+
+    label.checkbox input:checked+.checkbox:before {
+      background-color: lightblue;
+    }
+
+    label.radio input {
+      display: none;
+    }
+
+    label.radio .radio {
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      border: 1px solid gray;
+      background-color: white;
+      border-radius: 20px;
+      height: 20px;
+      width: 20px;
+    }
+
+    label.radio .radio:before {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      content: '';
+      width: 20px;
+      height: 20px;
+      border-radius: 19px;
+      position: absolute;
+    }
+
+    label.radio input:checked+.radio:before {
+      background-color: gray;
+    }
+
+    .todo-one {
+      align-items: center;
+      border: 1px solid lightgray;
+      display: flex;
+      height: 90px;
+      width: 490px;
+      background-color: rgb(236, 235, 235);
+    }
+
+    .text1 {
+      color: gray;
+      width: 300px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .cal {
+      margin-left: 0px;
+    }
+
+    .middle-content {
+      display: flex;
+    }
+
+    .right {
+      display: flex;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      height: 798px;
+      width: 940px;
+      background-color: white;
+    }
+
+    .r-text {
+      height: 500px;
+      width: 800px;
+    }
+
+    .r-tittle {
+      color: rgb(23, 55, 122);
+      font-size: 30px;
+    }
+
+    .c-circle {
+      background-color: lightblue;
+      margin-right: 10px;
+      margin-left: 30px;
+      border: 1px solid lightblue;
+      border-radius: 45px;
+      width: 45px;
+      height: 45px;
+    }
+
+    .r-icon {
+      color: gray;
+      margin-top: 20px;
+      display: flex;
+    }
+
+    .i-right {
+      margin-left: 40px;
+    }
+
+    .explanation {
+      word-spacing: 3px;
+      color: rgb(23, 55, 122);
+      margin-top: 30px;
+    }
+
+    .right-content {
+      margin-top: 50px;
+      display: flex;
+    }
+
+    .top {
+      cursor: pointer;
+      margin-top: 40px;
+    }
+
+    .e-text {
+      margin-left: 8px;
+      color: lightblue;
+    }
+
+    .e-plus {
+      color: gray;
+    }
+
+    .bottom {
+      margin-top: 30px;
+    }
+
+    .b-label {
+      color: gray;
+      width: 240px;
+      height: 40px;
+      align-items: center;
+      display: flex;
+    }
+
+    .l-text {
+      margin-left: 15px;
+    }
+    .arrow{
+      cursor: pointer;
+      margin-right: 5px;
+    }
+    .v{
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="left">
+    <div class="tittle">
+      <span class="tittle-content">TODU</span>
+    </div>
+
+    <div class="options">
+      <li><i class="fas fa-th option"></i> Overview</li>
+      <li><i class="far fa-calendar-alt option"></i> Today</li>
+      <li><i class="far fa-star option"></i> Important</li>
+      <li><i class="far fa-clock option"></i>Scheduled</li>
+      <li><i class="far fa-calendar-check option"></i></i> Done</li>
+    </div>
+
+    <div class="options1">
+      <li><i class="fas fa-square option"></i> Design</li>
+      <li><i class="fas fa-square option"></i> Marketing</li>
+      <li><i class="fas fa-square option"></i> Development</li>
+    </div>
+
+
+    <i class="fas fa-plus  fplus"></i>
+
+  </div>
+
+  <div class="middle">
+    <input type="text" class="text" placeholder="Search..." />
+
+    <div class="middle-content">
+      <div class="middle-c-content">
+        <div class="desıgn-part"><span class="design">DESIGN</span> <span class="d-icon"><i
+              class="fas fa-arrows-alt-v arrow"></i><i class="fas fa-ellipsis-v v"></i></span></div>
+
+        <div class="todo">
+
+          <div class="todo-one">
+
+            <label class="checkbox">
+              <input type="checkbox" name="todo">
+              <span class="checkbox"></span>
+            </label>
+
+            <div class="text1">
+              Calender component iteraiton <br>
+              <i class="far fa-calendar-alt cal"></i> Today <i class="far fa-bell"></i>
+            </div>
+
+            <i class="far fa-star"></i>
+          </div>
+
+
+          <div class="todo-one">
+
+            <label class="checkbox">
+              <input type="checkbox" name="todo">
+              <span class="checkbox"></span>
+            </label>
+
+            <div class="text1">
+              Meeting with Dev.team <br>
+              <i class="far fa-calendar-alt cal"></i> Tue,1 May <i class="far fa-bell"></i>
+            </div>
+
+            <i class="far fa-star"></i>
+          </div>
+
+
+          <div class="todo-one">
+
+
+            <label class="checkbox">
+              <input type="checkbox" name="todo">
+              <span class="checkbox"></span>
+            </label>
+
+            <div class="text1">
+              Conversation tweaks - iphone <br>
+              <i class="far fa-calendar-alt cal"></i> tommorow <i class="far fa-bell"></i>
+            </div>
+
+            <i class="far fa-star"></i>
+          </div>
+
+
+          <div class="todo-one">
+
+            <label class="checkbox">
+              <input type="checkbox" name="todo">
+              <span class="checkbox"></span>
+            </label>
+
+            <div class="text1">
+              Design review - Mable Roberts <br>
+              <i class="far fa-calendar-alt cal"></i> Mon, 27 Apr <i class="far fa-bell"></i>
+            </div>
+
+            <i class="far fa-star"></i>
+          </div>
+
+          <div class="todo-one">
+
+            <label class="checkbox">
+              <input type="checkbox" name="todo">
+              <span class="checkbox"></span>
+            </label>
+
+            <div class="text1">
+              Create styleguide for aseio<br>
+              <i class="far fa-calendar-alt cal"></i> Sun,3 Mar <i class="far fa-bell"></i>
+            </div>
+
+            <i class="far fa-star"></i>
+          </div>
+
+
+          <div class="todo-one">
+
+            <label class="checkbox">
+              <input type="checkbox" name="todo">
+              <span class="checkbox"></span>
+            </label>
+
+            <div class="text1">
+              Interiews - meeting with HR <br>
+              <i class="far fa-calendar-alt cal"></i> Thu, 2 May <i class="far fa-bell"></i>
+            </div>
+
+            <i class="far fa-star"></i>
+          </div>
+
+          <div class="todo-one">
+
+            <label class="checkbox">
+              <input type="checkbox" name="todo">
+              <span class="checkbox"></span>
+            </label>
+
+            <div class="text1">
+              Looking for brochure printing Soluti... <br>
+              <i class="far fa-calendar-alt cal"></i> Tue,27 Feb <i class="far fa-bell"></i>
+            </div>
+
+            <i class="far fa-star"></i>
+          </div>
+
+          <div class="todo-one">
+
+            <label class="checkbox">
+              <input type="checkbox" name="todo">
+              <span class="checkbox"></span>
+            </label>
+
+            <div class="text1">
+              How Does An Lcd Screen Work<br>
+              <i class="far fa-calendar-alt cal"></i> Wed,1 Feb <i class="far fa-bell"></i>
+            </div>
+
+            <i class="far fa-star fstar"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="right-content">
+          <div class="c-circle">
+          </div>
+          <div class="r-text">
+            <div class="r-tittle">
+              Create styleguide for aseio
+            </div>
+
+            <div class="r-icon">
+              <div class="i-left">
+                <i class="far fa-calendar-check"></i>
+                Fri 8 Mar
+              </div>
+
+              <div class="i-right">
+                <i class="far fa-clock"></i>
+                Remind me at 9.15pm
+              </div>
+
+            </div>
+            <div class="explanation">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, ducimus, eaque,
+              <br>
+              ad vitae cum eius aperiam molestias eligendi aspernatur impedit suscipit enim <br>
+              <br>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque <br>
+              illo sint libero culpa excepturi sequi architecto nobis, aliquam beatae, maiores
+              <br>
+              Modi hic ipsum facilis ea! Lorem ipsum dolor sit amet. Lorem ipsum dolor <br>
+              <br>
+              Small Towns and Big States <br>
+            </div>
+
+            <div class="r-end">
+              <div class="top">
+                <i class="fas fa-plus e-plus"></i> <span class="e-text">Add Step</span>
+              </div>
+
+              <div class="bottom">
+
+                <div class="b-label">
+                  <label class="radio">
+                    <input type="radio" name="bottom">
+                    <span class="radio"></span>
+                  </label>
+
+                  <span class="l-text">started print</span>
+
+                </div>
+
+                <div class="b-label">
+                  <label class="radio">
+                    <input type="radio" name="bottom">
+                    <span class="radio"></span>
+                  </label>
+
+                  <span class="l-text">Get developer's inputs</span>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
